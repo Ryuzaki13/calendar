@@ -1,0 +1,116 @@
+body {
+    margin: 10px;
+    font-family: sans-serif;
+}
+
+label {
+    position: relative;
+    display: inline-block;
+}
+label:hover {
+    cursor: pointer;
+}
+label > input[type="text"] {
+    outline: none;
+    border: none;
+    background: #e0e0e0;
+    border-radius: 0;
+    height: 28px;
+    font-size: 22px;
+    padding-left: 5px;
+    transition: background 450ms linear;
+}
+label > input[type="text"]:focus {
+    background-color: rgb(218, 174, 240);
+}
+label > input[type="text"] + .lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+label > input[type="text"] + .lines > .line {
+    position: absolute;
+    background-color: rgb(172, 77, 220);
+}
+label > input[type="text"] + .lines > :nth-child(1){
+    bottom: -2px;
+    left: calc(100% + 2px);
+    right: 0;
+    height: 2px;
+    transition: left 200ms linear 400ms;
+}
+label > input[type="text"] + .lines > :nth-child(2){
+    top: calc(100% + 2px);
+    bottom: -2px;
+    left: -2px;
+    width: 2px;
+    transition: top 50ms linear 250ms;
+}
+label > input[type="text"] + .lines > :nth-child(3){
+    top: -2px;
+    left: -2px;
+    right: calc(100% + 2px);
+    height: 2px;
+    transition: right 200ms linear 50ms;
+}
+label > input[type="text"] + .lines > :nth-child(4){
+    top: -2px;
+    bottom: calc(100% + 2px);
+    right: -2px;
+    width: 2px;
+    transition: bottom 50ms linear 0ms;
+}
+
+
+label > input[type="text"]:focus + .lines > .line:nth-child(1) {
+    left: -2px;
+    transition: left 200ms linear 0ms;
+}
+label > input[type="text"]:focus + .lines > .line:nth-child(2) {
+    top: -2px;
+    transition: top 50ms linear 200ms;
+}
+label > input[type="text"]:focus + .lines > .line:nth-child(3) {
+    right: -2px;
+    transition: right 200ms linear 250ms;
+}
+label > input[type="text"]:focus + .lines > .line:nth-child(4) {
+    bottom: -2px;
+    transition: bottom 50ms linear 400ms;
+}
+
+.date-contaiter {
+    display: inline-grid;
+    grid-template-columns: 24px 150px 24px;
+    font-size: 22px;
+    margin: 10px 0;
+    gap: 2px;
+}
+.date-contaiter > div {
+    background: #e0e0e0;
+    text-align: center;
+}
+.date-contaiter > .btn:hover {
+    cursor: pointer;
+}
+.calendar {
+    position: fixed;
+    padding: 5px;
+    display: grid;
+    background-color: rgb(124, 187, 255);
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    font-size: 12px;
+    text-align: center;
+}
+.calendar > div {
+    padding: 2px;
+    background-color: white;
+}
+.calendar > div:hover {
+    cursor: pointer;
+    background-color: rgb(0, 102, 255);
+    color: white;
+}
